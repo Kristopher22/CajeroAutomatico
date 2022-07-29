@@ -4,7 +4,7 @@ public class Interfaz {
         System.out.println("Bienvenido a Banco Estafa :" + "\n"+
                 "para Cancerlar Oprima 0"+"\t"+"\n"+
 
-                "Por favor Ingrese su Contraseña:"
+                "Por favor Ingrese su Contraseñas vergas:"
                 );
     }
 
