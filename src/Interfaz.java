@@ -1,10 +1,7 @@
 public class Interfaz {
 
     public static void LoginUsuario(){
-        System.out.println("Bienvenido a Banco Estafa :" + "\n"+
-                "para Cancerlar Oprima 0"+"\t"+"\n"+
-
-                "Por favor Ingrese su Contraseñas vergas:"
+        System.out.println("Bienvenido a Banco Estafa :\npara Cancerlar Oprima 0\nPor favor Ingrese su Contraseñas vergas:"
                 );
     }
 
@@ -17,12 +14,7 @@ public class Interfaz {
    }
 
     public static void menu() {
-        System.out.println("Elija una de las siguientes opciones :" + "\n" +
-                "escriba 1 para consultar su saldo" + "\n" +
-                "escriba 2 para ingresar dinero" + "\n" +
-                "escriba 3 para sacar dinero" + "\n" +
-                "escriba 4 para consultar sus ultimos movimientos" + "\n" +
-                "una vez escrita la opcion, pulse la tecla Enter"
+        System.out.println("Elija una de las siguientes opciones :\n escriba 1 para consultar su saldo\nescriba 2 para ingresar dinero\nescriba 3 para sacar dinero\nescriba 4 para consultar sus ultimos movimientos\nuna vez escrita la opcion, pulse la tecla Enter"
         );
     }
 
