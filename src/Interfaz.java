@@ -26,8 +26,11 @@ public class Interfaz {
     public static void RequestMoney(){
         System.out.println("Ingrese la cantidad de dinero a depositar: ");
     }
+    public static void Sacardinero(){
+        System.out.println("Ingrese Monto a Retirar ");
+    }
     public static void LimiteRetiro(){
-        System.out.println("El retiro máximo es de 200 billuyos.");
+        System.out.println("El retiro máximo es de 1000 billuyos.");
     }
     public static void LimiteDeposito(){
         System.out.println("El depósito máximo es de 5000 billuyos.");
@@ -35,6 +38,10 @@ public class Interfaz {
     public static void accionExitosa(){
         System.out.println("\n\n");
         System.out.println("Acción realizada exitosamente");
+    }
+
+    public static void Movimientos(){
+
     }
 }
 

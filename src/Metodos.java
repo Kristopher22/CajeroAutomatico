@@ -1,8 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Metodos {
     static Usuario usuario = new Usuario();
-
+    static List<String> Movimientos = new ArrayList<>();
+    static String RegistroMov ;
+    static List MovList = new ArrayList<>();
     public static int tecladoint() {
         Scanner sc = new Scanner(System.in);
         //int opcion = sc.nextInt();
@@ -10,25 +14,51 @@ public class Metodos {
     }
 
     public static void Swich(int opcion) {
+        int validador;
+        int saldo;
+        int contador = 0 ;
         switch (opcion) {
             case 1:
                 System.out.println(usuario.getSaldo());
                 Interfaz.question();
                 Answer(tecladoint());
+                RegistroMov = "Consulta de saldo ";
+                MovList.add(ListaMovimiento(RegistroMov));
                 break;
             case 2:
-                int validador;
-                int saldo;
                 do {
                     Interfaz.RequestMoney();
-                    saldo=tecladoint();
-                    validador=validarNuevoSaldo(saldo);
-                }while (validador==1);
+                    saldo = tecladoint();
+                    validador = validarNuevoSaldo(saldo);
+                } while (validador == 1);
                 Interfaz.accionExitosa();
                 usuario.setSaldo(saldo);
                 Interfaz.question();
                 Answer(tecladoint());
                 break;
+            case 3:
+                do {
+                    contador ++;
+                    if(contador > 1) {
+                        Interfaz.question();
+                        Answer(tecladoint());
+                    }
+                    Interfaz.Sacardinero();
+                    saldo = tecladoint();
+                    validador = ValidarRetiroSaldo(saldo);
+
+                }while (validador ==1);
+                Interfaz.question();
+                Answer(tecladoint());
+
+            case 4:
+
+                  for( int i = 0 ; i <= MovList.size() ; i++ ){
+                      System.out.println(MovList.get(i).toString());
+
+                  }
+                Interfaz.question();
+                Answer(tecladoint());
             default:
                 break;
         }
@@ -50,6 +80,7 @@ public class Metodos {
         }
         return acceso;
     }
+
     public static void MainMenu() {
         Interfaz.menu();
         Metodos.Swich(Metodos.tecladoint());
@@ -58,13 +89,13 @@ public class Metodos {
     public static void Answer(int opcion) {
         if (opcion != 0) {
             MainMenu();
-        }else{
+        } else {
             Interfaz.Despedida();
         }
     }
 
     public static int validarNuevoSaldo(int Saldo) {
-        int mensaje=0;
+        int mensaje = 0;
         if (Saldo > 5000) {
             Interfaz.LimiteDeposito();
             mensaje = 1;
@@ -82,4 +113,38 @@ public class Metodos {
             MainMenu();
         }
     }
+
+    public static  int ValidarRetiroSaldo (int saldo){
+        int mensaje ;
+        int resta = usuario.getSaldo() - saldo;
+
+        if (saldo > 1000){
+            Interfaz.LimiteRetiro();
+            mensaje= 1;
+
+        }else if (resta > 0){
+            System.out.println("Transaccion exitosa retire su dinero");
+            usuario.setSaldo( usuario.getSaldo() - saldo );
+            mensaje = 2;
+
+        }else {
+            System.out.println("no tiene dinero Suficiente para realizar la operacion");
+            mensaje = 1 ;
+
+        }
+        return mensaje;
+    }
+
+    public static List ListaMovimiento(String Movimiento){
+
+
+
+    Movimientos.add(Movimiento);
+    return Movimientos;
+
+    }
+    public static List MostrarLista(List Movimiento){
+        return Movimiento;
+    }
+
 }
