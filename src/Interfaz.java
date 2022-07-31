@@ -17,7 +17,7 @@ public class Interfaz {
         System.out.println("Por favor retire su tarjeta \n \t Hasta luego");
     }
     public static void menu() {
-        System.out.println("Elija una de las siguientes opciones :\n escriba 1 para consultar su saldo\nescriba 2 para ingresar dinero\nescriba 3 para sacar dinero\nescriba 4 para consultar sus ultimos movimientos\nuna vez escrita la opcion, pulse la tecla Enter"
+        System.out.println("Elija una de las siguientes opciones :\n escriba 1 para consultar su saldo\nescriba 2 para ingresar dinero\nescriba 3 para sacar dinero\nescriba 4 para consultar sus ultimos movimientos\nescriba 0 para salir \nuna vez escrita la opcion, pulse la tecla Enter"
         );
     }
     public static void question(){
@@ -36,12 +36,15 @@ public class Interfaz {
         System.out.println("El depósito máximo es de 5000 billuyos.");
     }
     public static void accionExitosa(){
-        System.out.println("\n\n");
         System.out.println("Acción realizada exitosamente");
     }
 
-    public static void Movimientos(){
+    public static void MensajeError(){
+        System.out.println("Opción ingresada inválida");
+    }
 
+    public static void MensajeAnular() {
+        System.out.println("Para volver al menú principal presione 0");
     }
 }
 
